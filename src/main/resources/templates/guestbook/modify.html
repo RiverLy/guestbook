@@ -56,7 +56,7 @@
             .attr("action", "/guestbook/remove")
             .attr("method", "post");
         actionForm.submit();
-    });
+    });q
 
     $(".modifyBtn").click(function(){
         if(!confirm("Do you want to save changes?")){
@@ -66,6 +66,16 @@
             .attr("action", "/guestbook/modify")
             .attr("method", "post")
             .submit();
+    });
+
+    $(".listBtn").click(function(){
+        var pageInfo = $("input[name='page']");
+        actionForm.empty();
+        actionForm.append(pageInfo);
+        actionForm
+            .attr("action", "/guestbook/list")
+            .attr("method", "get");
+        actionForm.submit();
     });
 
 </script>
