@@ -57,6 +57,17 @@
             .attr("method", "post");
         actionForm.submit();
     });
+
+    $(".modifyBtn").click(function(){
+        if(!confirm("Do you want to save changes?")){
+            return;
+        }
+        actionForm
+            .attr("action", "/guestbook/modify")
+            .attr("method", "post")
+            .submit();
+    });
+
 </script>
 
 </html>
