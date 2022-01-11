@@ -49,7 +49,7 @@ public class GuestbookController {
     public void read(Long gno, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, Model model){
         log.info("Gno : " + gno);
         GuestbookDTO dto = guestbookService.read(gno);
-        model.addAttribute(dto);
+        model.addAttribute("dto", dto);
     }
 
 }
