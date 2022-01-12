@@ -25,7 +25,7 @@
 
         <div class="form-group">
             <label>Content</label>
-            <textarea class="form-control" rows="5" name="content">
+            <textarea id="content-input" class="form-control" rows="5" name="content">
                     [[${dto.content}]]
                 </textarea>
         </div>
@@ -63,9 +63,27 @@
             }
 
             function modify(){
+
+                var title = document.querySelector("input[name='title']").value;
+                var content = document.querySelector("#content-input").value;
+                var writer = document.querySelector("input[name='writer']").value;
+
+                if(title === undefined || title=== null || title === '' || title.trim().length === 0){
+                    alert("제목을 작성해주세요.");
+                    return;
+                }
+                if(content === undefined || content === null || content === '' || content.trim().length === 0){
+                    alert("내용을 작성해주세요.");
+                    return;
+                }
+                if(writer === undefined || writer === null || writer === '' || writer.trim().length === 0){
+                    alert("작성자를 입력해주세요.");
+                    return;
+                }
                 if(!confirm("Do you want to save changes?")){
                     return;
                 }
+
                 actionForm
                     .attr("action", "/guestbook/modify")
                     .attr("method", "post")
