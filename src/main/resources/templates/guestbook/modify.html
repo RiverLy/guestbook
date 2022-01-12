@@ -10,6 +10,8 @@
         <form action="/guestbook/modify" method="post">
 
             <input type="hidden" name="page" th:value="${requestDTO.page}">
+            <input type="hidden" name="type" th:value="${requestDTO.type}">
+            <input type="hidden" name="keyword" th:value="${requestDTO.keyword}">
 
         <div class="form-group">
             <label>Gno</label>
@@ -71,9 +73,13 @@
             }
 
             function backToList(){
-                var pageInfo = document.querySelector("input[name='page']");
+                var page = document.querySelector("input[name='page']");
+                var type = document.querySelector("input[name='type']");
+                var keyword = document.querySelector("input[name='keyword']");
                 actionForm.empty();
-                actionForm.append(pageInfo);
+                actionForm.append(page);
+                actionForm.append(type);
+                actionForm.append(keyword);
                 actionForm
                     .attr("action", "/guestbook/list")
                     .attr("method", "get")
