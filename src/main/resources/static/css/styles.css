@@ -2741,7 +2741,16 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   width: 1%;
   min-width: 0;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
+
+.input-group-append,
+.input-group-prepend {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
 .input-group > .form-control:focus,
 .input-group > .form-select:focus {
   z-index: 3;
