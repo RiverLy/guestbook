@@ -70,7 +70,7 @@ public class GuestbookController {
     public String remove(Long gno, RedirectAttributes redirectAttributes){
         guestbookService.remove(gno);
         redirectAttributes.addFlashAttribute("msg", gno);
-        return "/redirect:/guestbook/list";
+        return "redirect:/guestbook/list";
     }
 
 }

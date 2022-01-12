@@ -11,8 +11,19 @@
     <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" >
     <!-- Core theme CSS (includes Bootstrap)-->
     <link th:href="@{/css/styles.css}" rel="stylesheet" >
+    <link th:href="@{/css/styles.css}" rel="stylesheet" >
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+    <!-- Bootstrap core JS-->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js}"></script>
+    <!-- Core theme JS-->
+    <script th:src="@{/js/scripts.js}"></script>
 </head>
 <body>
+<style>
+        * {
+            margin-bottom : 3vh;
+        }
+</style>
 <div class="d-flex" id="wrapper">
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
@@ -22,16 +33,14 @@
                 <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
             </div>
         </nav>
+
         <!-- Page content-->
         <div class="container-fluid">
             <th:block th:replace=" ${content}"></th:block>
         </div>
     </div>
 </div>
-<!-- Bootstrap core JS-->
-<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js}"></script>
-<!-- Core theme JS-->
-<script th:src="@{js/scripts.js}"></script>
+
 </body>
 </th:block>
 </html>
