@@ -81,17 +81,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal Title</h5>
+                        <h5 class="modal-title">Info</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal Body Text Goes Here</p>
+                        <p class="modal-message">Modal Body Text Goes Here</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Changes</button>
                     </div>
                 </div>
             </div>
@@ -103,12 +102,12 @@
                 var msg = [[${msg}]];
                 console.log(msg);
                 if(msg) {
+                    document.querySelector(".modal-message").innerText = msg;
                     $(".modal").modal("show");
                 }
             });
 
             var searchForm = $("#searchForm");
-
             $('.btn-search').click(function(e){
                 searchForm.submit();
             });

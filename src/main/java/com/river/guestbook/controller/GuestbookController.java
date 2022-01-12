@@ -41,7 +41,7 @@ public class GuestbookController {
     public String registerPost(GuestbookDTO dto, RedirectAttributes redirectAttributes){
         log.info("dto...." + dto);
         Long gno = guestbookService.register(dto);
-        redirectAttributes.addFlashAttribute("msg", gno);
+        redirectAttributes.addFlashAttribute("msg", gno + "번 글이 등록되었습니다.");
         return "redirect:/guestbook/list";
     }
 
@@ -71,7 +71,7 @@ public class GuestbookController {
     @PostMapping("/remove")
     public String remove(Long gno, RedirectAttributes redirectAttributes){
         guestbookService.remove(gno);
-        redirectAttributes.addFlashAttribute("msg", gno);
+        redirectAttributes.addFlashAttribute("msg", gno + "번 글이 삭제되었습니다.");
         return "redirect:/guestbook/list";
     }
 
