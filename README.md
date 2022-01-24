@@ -15,6 +15,6 @@
     - IDE
         - IntelliJ Community
 2. 데이터 베이스 연결
-    - application.yml 설정
+    - application.properties 설정
         - driver : org.mariadb.jdbc.Driver
         - url : jdbc:mariadb://localhost:3306/test_db
